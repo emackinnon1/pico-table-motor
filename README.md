@@ -1,6 +1,8 @@
 # pico-table-motor
 A raspberry pi pico that powers a couple of linear actuators attached to a table hinge using an MQTT server to send and receive messages.
 
+https://photos.google.com/share/AF1QipOxRTt1fZprU7FDNkr2YeoZxs5IqVx5rKe-qXA9ltJ0vuCPGBfnsxae41Ng3UkEgA?key=bEtFODZ1ZkVuVEs3YWlqcHM2YlJTelRWT1RiMEpR
+
 ## Explanation of project
 I will go ahead and tell you right now: This is a totally unnecessary project.  
 This project is built using a coffee table that has a hinged that works _just fine_ when opened manually, as the manufacturer intended. When I wired everything up, put the final pieces together, and ran it successfully for the first time to show my girlfriend, the first words out of my mouth upon it completing the opening and closing movements were: "Pretty pointless, huh?"  
