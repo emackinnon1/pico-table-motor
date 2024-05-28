@@ -1,7 +1,11 @@
 # pico-table-motor
 A raspberry pi pico that powers a couple of linear actuators attached to a table hinge using an MQTT server to send and receive messages.
 
-https://photos.google.com/share/AF1QipOxRTt1fZprU7FDNkr2YeoZxs5IqVx5rKe-qXA9ltJ0vuCPGBfnsxae41Ng3UkEgA?key=bEtFODZ1ZkVuVEs3YWlqcHM2YlJTelRWT1RiMEpR
+
+![20240528_084158-ezgif com-optimize](https://github.com/emackinnon1/pico-table-motor/assets/49004020/ae06bcd8-f7e9-4cbe-8672-15942d747368)
+
+[video](https://photos.google.com/share/AF1QipOxRTt1fZprU7FDNkr2YeoZxs5IqVx5rKe-qXA9ltJ0vuCPGBfnsxae41Ng3UkEgA?key=bEtFODZ1ZkVuVEs3YWlqcHM2YlJTelRWT1RiMEpR)
+
 
 ## Explanation of project
 I will go ahead and tell you right now: This is a totally unnecessary project.  
