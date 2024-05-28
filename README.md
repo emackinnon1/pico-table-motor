@@ -41,7 +41,7 @@ Countersink bolts (the countersunk nut fit the linear actuator through hole perf
 [Amazon link](https://www.amazon.com/gp/product/B0995NNB7F/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
 
 
-## Method to the Madness
+## Methods of the Madness
 ### Attaching the actuator
 I unfortunately did not remember to take many photos during the building process, but the finished product photos will hopefully suffice. The other thing that I wish I had done is to build this at the same time as I was putting the table together. It is not the end of the world if you build the table and then later come back and put the motors on, but it sure would have been easier if I could have done it all at once.
 The hardest part of this project was figuring out just how to attach the linear actuators. For quite some time, I tested the actuators without actually drilling any holes or attaching the brackets that come with them to any part of the table; I wanted to see if the stroke length would match up well enough to the arms on the hinge to just attach them to one spot and not have to do anything extra. There are little hydraulic pistons that attach to posts on the hinge that I thought I could co-opt, but unfortunately that didn't work.  
@@ -62,4 +62,26 @@ You will want to pick out the right spacer or cut it to size as needed.
 
 After everything is attached, we can move on to getting the limit switches, drivers, power, etc all wired up and the code uploaded to the pico!
 
+### Wiring
+![motor-controller drawio](https://github.com/emackinnon1/pico-table-motor/assets/49004020/e0951f14-086b-410d-ae31-89a1590b5368)
+![20240528_084543](https://github.com/emackinnon1/pico-table-motor/assets/49004020/405705ab-569e-403e-9d91-0cd942631011)
 
+All in all, this isn't that complicated of a wiring job. You need to connect the correct pins on the pico to the motor drivers, split the power from the power supply and run it to the power inputs of the motor driver, then run the motor outputs from the drivers to the limit switches and subsequently to the actuators. The diodes should be wired to the correct poles of the limit switches as well. For the experts who read this, you will already know this, but for others: I recommend _NOT_ soldering anything until you are sure you have it all in working order. Start with one actuator, wiring everything up (using electrical tape to maintain connections before permanently soldering later) and get it working before moving onto the second actuator. Be sure you can disconnect power to the motor quickly in case the limit switches aren't working properly at first. You can also take the pin out of the bottom brackets that hold the actuator to it, if needed, but be aware that it can be a little tricky to get back on.
+
+The limit switches need to be attached in place so the hinge triggers them when the table is fully open. I took some long skinny screws that I got from the hardware store and a plastic spacer cut to size that would hold the switch far enough awa from the sidewall of the table to engage when the hinge was all the way open. For the size, you will probably have to tailor this to the table that you buy. I bought a size that fit snugly through the limit switch bolt holes (just bring the switch to the store with you) and I bought a series of lengths of them starting from something like 25mm on up to 40mm (I think, it was about 6 months ago) and took used the first one that fit well, which was 35mm I believe.  
+
+![20240528_101722](https://github.com/emackinnon1/pico-table-motor/assets/49004020/750a0f8a-2482-4684-a106-2c6d48dd197a)
+
+
+![20240528_101705](https://github.com/emackinnon1/pico-table-motor/assets/49004020/b0ecdb1a-0963-49bb-a288-178684e0aae3)
+
+
+![20240528_101649](https://github.com/emackinnon1/pico-table-motor/assets/49004020/823dde5d-70ae-4b36-8f6e-813b8c553b38)
+
+I used electrical tape to wrap the exposed metal parts of the diode and the poles of the limit switches. As you are wiring / soldering, TEST AND TEST AGAIN to be sure that everything is still working as expected. I left the motor drivers until last so I could use the power outputs to be sure that the limit switches and actuators were working.
+
+### Coding
+If you haven't already flashed micropython to a raspberry pi pico before, google it. There are plenty of tutorials on that and on getting Thonny running to do some coding. After you have done that grab the code from this repo and upload it via Thonny. You'll need to have an MQTT server and a way of sending messages to the pico, or you can set up Home Assistant to do all of this. I have also included my yaml set up if anyone wants to go that route.
+
+The code is pretty straightforward. You will need to put in your network id and password and your MQTT server. The quick and dirty explanation of the code is:
+After the pico is connected to the MQTT server, it will then be ready to receive messages on the `cmd_topic` which will match to the string of `"OPEN"` or `"CLOSED"`. Depending on which one is received, it will change the output pins
