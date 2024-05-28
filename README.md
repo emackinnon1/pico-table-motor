@@ -84,4 +84,7 @@ I used electrical tape to wrap the exposed metal parts of the diode and the pole
 If you haven't already flashed micropython to a raspberry pi pico before, google it. There are plenty of tutorials on that and on getting Thonny running to do some coding. After you have done that grab the code from this repo and upload it via Thonny. You'll need to have an MQTT server and a way of sending messages to the pico, or you can set up Home Assistant to do all of this. I have also included my yaml set up if anyone wants to go that route.
 
 The code is pretty straightforward. You will need to put in your network id and password and your MQTT server. The quick and dirty explanation of the code is:
-After the pico is connected to the MQTT server, it will then be ready to receive messages on the `cmd_topic` which will match to the string of `"OPEN"` or `"CLOSED"`. Depending on which one is received, it will change the output pins
+After the pico is connected to the MQTT server, it will then be ready to receive messages on the `cmd_topic` which will match to the string of `"OPEN"` or `"CLOSED"`. Depending on which one is received, it will change the output pins which switches the polarity to the motors. The `state_topic` sends the updated state of `"OPEN"` or `"CLOSED"` to the MQTT server. The server also gets pinged periodically to maintain the connection, although occasionally (at least for my set up) I have to unplug and replug the pico back in because the connection gets dropped.
+
+### Final thoughts
+I listed as many things to watch out for as I could so you don't have as much trouble as I did, but I may have missed some things. Feel free to comment with whatever thoughts or questions you may have. I am sure someone somewhere has some ideas on improving it.
