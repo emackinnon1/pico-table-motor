@@ -12,15 +12,15 @@ in4 = machine.Pin(15, machine.Pin.OUT)
 # connect to wifi
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect("Who pooped in the pool", "Sonoffinan1!")
+wlan.connect("{wifi_network}", "{wifi_password}")
 while not wlan.isconnected():
     print("Connecting...")
     time.sleep(1)
 print("Connected!")
 # mqtt vars
-mqtt_server = '10.0.0.91'
-mqtt_user = 'mqtt_user'
-mqtt_password = 'Sonoffinan'
+mqtt_server = '{mqtt_server}'
+mqtt_user = '{mqtt_user}'
+mqtt_password = '{mqtt_password}'
 client_id = 'table_motor_switch'
 sub_topic = 'cmd/table_motor_switch'
 pub_topic = 'state/table_motor_switch'
