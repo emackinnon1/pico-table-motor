@@ -1,0 +1,17 @@
+mqtt:
+  switch:
+    - name: Table motor switch
+      unique_id: b327b0e5-cc0a-488e-93fc-22ec3831296f
+      state_topic: "state/table_motor_switch"
+      value_template: "{{ value == 'OPEN' }}"
+      command_topic: "cmd/table_motor_switch"
+      payload_on: "OPEN"
+      payload_off: "CLOSED"
+      state_on: true
+      state_off: false
+      retain: true
+      qos: 1
+
+  sensor:
+    - name: "Table Motor Status"
+      state_topic: "state/table_motor_switch/status"
