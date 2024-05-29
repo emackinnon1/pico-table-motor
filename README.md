@@ -51,7 +51,9 @@ Countersink bolts (the countersunk nut fit the linear actuator through hole perf
 ### Attaching the actuator
 I unfortunately did not remember to take many photos during the building process, but the finished product photos will hopefully suffice. The other thing that I wish I had done is to build this at the same time as I was putting the table together. It is not the end of the world if you build the table and then later come back and put the motors on, but it sure would have been easier if I could have done it all at once.
 The hardest part of this project was figuring out just how to attach the linear actuators. For quite some time, I tested the actuators without actually drilling any holes or attaching the brackets that come with them to any part of the table; I wanted to see if the stroke length would match up well enough to the arms on the hinge to just attach them to one spot and not have to do anything extra. There are little hydraulic pistons that attach to posts on the hinge that I thought I could co-opt, but unfortunately that didn't work.  
+
 ![Screenshot 2024-05-28 at 10 22 17](https://github.com/emackinnon1/pico-table-motor/assets/49004020/f0a8af54-10cc-4e1e-be6b-d5beed25bfca)  
+
 However, I knew that if I could attach the end of the actuator to the right spot and then have some way of shutting off power to the actuator once the table reached the right position, this was a doable project!
 
 
