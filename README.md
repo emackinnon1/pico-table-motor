@@ -10,7 +10,7 @@ A raspberry pi pico that powers a couple of linear actuators attached to a table
 ## Explanation of project
 I will go ahead and tell you right now: This is, without a doubt, a _totally_ unnecessary project.  
 This project is built using a coffee table that has a hinged that works _just fine_ when opened manually, as the manufacturer intended. When I wired everything up, put the final pieces together, and ran it successfully for the first time to show my girlfriend, the first words out of my mouth upon it completing the opening and closing movements were: "Pretty pointless, huh?"  
-That being said, this was fun to build and it does actually make for a cool party trick when people are over. I used this in conjunction with Home Assistant and running a Mosquitto server, but you could still make this work if you have an alternative MQTT set up.
+That being said, this was fun to build and it does actually make for a cool party trick when people are over. I used this in conjunction with Home Assistant running a Mosquitto MQTT server, but you could still make this work if you have an alternative MQTT set up.
 
 The list of supplies you will need are:
 One of these coffee tables with a similar hinge type:
